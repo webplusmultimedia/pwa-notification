@@ -6,9 +6,15 @@ self.addEventListener('push', evt => {
         data: {
             dateOfArrival: Date.now(),
             primaryKey: 1
-        }
+        },
+        actions: [
+            {action: 'explore', title: 'Explore this new world',
+                icon: 'images/checkmark.png'},
+            {action: 'close', title: 'Close notification',
+                icon: 'images/xmark.png'},
+        ]
     };
     evt.waitUntil(
-        self.registration.sendNotification('test message', options)
+        self.registration.showNotification('test message', options)
     )
 });
