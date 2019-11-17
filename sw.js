@@ -1,4 +1,4 @@
-self.addEventListener('push', function (e) {
+self.addEventListener('push', evt => {
     var options = {
         body: 'Here is a notification body!',
         icon: 'images/example.png',
@@ -8,7 +8,7 @@ self.addEventListener('push', function (e) {
             primaryKey: 1
         }
     };
-    e.waitUntil(
-        e.registration.sendNotification('test message', options)
+    evt.waitUntil(
+        self.registration.sendNotification('test message', options)
     )
 });
