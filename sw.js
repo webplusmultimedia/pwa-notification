@@ -9,6 +9,6 @@ self.addEventListener('push', evt => {
         }
     };
     evt.waitUntil(
-        self.registration.sendNotification('test message', options)
+        self.registration.showNotification('test message', options)
     )
 });
