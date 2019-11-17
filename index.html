@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pwa notification</title>
+</head>
+<body>
+<button onclick="subscribe()">Souscrire à la Notification</button>
+<script>
+    addEventListener('load', async () => {
+        let sw = await navigator.serviceWorker.register('./sw.js');
+    });
+
+    async function subscribe() {
+        let sw = await navigator.serviceWorker.ready;
+        let push = await sw.pushManager.subscribe({
+            applicationServerKey: 'BEf1IWsWxpYHwvd9uKZPjCSKUtja__vryjavo1j8wqZopNhm70kWhzb6olPzKt6X196gQCsDeYMgVDXq-HY2-A4',
+            userVisibleOnly: true
+        });
+
+        console.log(JSON.stringify(push))
+    }
+</script>
+</body>
+</html>
