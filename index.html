@@ -9,9 +9,16 @@
 <body>
 <button onclick="subscribe()">Souscrire à la Notification</button>
 <script>
-    addEventListener('load', async () => {
-        let sw = await navigator.serviceWorker.register('./sw.js');
-    });
+
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+            .then((reg) => console.log('service worker register'))
+            .catch((err) => console.log('service worker doesnt exist',err))
+    }
+    else{
+        console.log('error')
+    }
 
     async function subscribe() {
         let sw = await navigator.serviceWorker.ready;

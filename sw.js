@@ -9,6 +9,6 @@ self.addEventListener('push', function (e) {
         }
     };
     e.waitUntil(
-        self.registration.sendNotification('test message', options)
+        e.registration.sendNotification('test message', options)
     )
 });
