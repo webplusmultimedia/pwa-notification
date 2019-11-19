@@ -7,18 +7,22 @@ let vapiKeys = {
 
 push.setVapidDetails("mailto:test@test.com", vapiKeys.publicKey, vapiKeys.privateKey);
 let sub1 = {
-    "endpoint": "https://fcm.googleapis.com/fcm/send/d-qGAvUwdP4:APA91bH8C6yN3e-Sb4C6xjJBiMvbvPXNT1OSKV_LpmNxH4w63iX0YX01d8nUEPjIbjrgl-rRiufQdoLsk6NeYnyrN5RnMkhKj__vIH1HiCBOvG72luBwgak36hpnTwDZf-x-BXOLGae7",
+    "endpoint": "https://fcm.googleapis.com/fcm/send/fIGoxnj2tZo:APA91bEUkbvb2zaZwwoAUSUApWk8dERz9U-n2dgtNgnZQ-7IZB1KuNXE-U180BhCP6Xlf4Hpob0_K7K7JKLlaB0Ic1qbDmP0UDpEzSQXhNXkS46Ez6ZIPpDk5fOAxu2HOeRDAfEVUlls",
     "expirationTime": null,
-    "keys": {"p256dh": "BKZuj_uGZAWEqcKEb9KNaQHJwnDS1zwcAy24LyYsBtvb97kQiXKFlkJks2ovQ2FBZlO4vZ7gc8vfbBXID_50HEA", "auth": "r6-3rs5Mk0omU3wNutaDmg"}
-};
-
-let sub2 = {
-    "endpoint": "https://updates.push.services.mozilla.com/wpush/v2/gAAAAABd0Yfi8aTmOUWXspv0bA6W9TbCEPtxp7TpVkkXHiXnba08eLNHcBx97aM8yK6gWchTTA9mq0VXZiYnjpxC7PbBrQfb7E_-mHfsfkdix1xwS7VR4p5Nu_cmfpJoyEiLTsi-ly0VeCDX72J2KurF4Ykjh5yZhdi9iszRAqlakcfaZu0Fs2o",
     "keys": {
-        "auth": "zdYM4S277k_TKARRD0tPbg",
-        "p256dh": "BDQp64C9uVj4ncfQyJrM4XL_hBWSsGx1paKaNeWRNAt_MB1oS9W_nJpEXVbT6t3raX5vYv6xMxb58l39X3Nuf8k"
+        "p256dh": "BGcrN__nieY9qSn7muHcR-S6yXS9LAcBgttyhr5xrNee4x0UCE6NaOPDvWQPslqkwAxTVv-kFxa35VjYPB4_X0s",
+        "auth": "Zk4JZ2ud_IQnlrpb8WYMhw"
     }
 };
 
-push.sendNotification(sub1, "test message").catch((err)=> console.log(err));
-push.sendNotification(sub2, "test message").catch((err)=> console.log(err));
+let sub2 = {
+    "endpoint": "https://fcm.googleapis.com/fcm/send/dBrSx2uSnhE:APA91bHwN_jQ4HG-FxR_jUeEG8d_21X3cGuv8mSfAVJMk-k4M5hKTWtbhfmkytsWQbeu-ISlYwGD8n0U8NdN5Oe482OjuV_6w6e3Avu-ZG1F1ijXCyDqdt1l9-FsuGYqJobgXKQoDqQD",
+    "expirationTime": null,
+    "keys": {
+        "p256dh": "BMDXV1_0k9cI96AdJaJxh-QDJx70WBDPV7D4CxFOSuqXDzcjJgZbNczIqrz0EKraILhOA-LftE-AtVmjKietvT0",
+        "auth": "n7LLx-ZLxRNCPp4TTn3L8w"
+    }
+};
+
+push.sendNotification(sub1, "test message").catch((err) => console.log(err));
+push.sendNotification(sub2, "test message").catch((err) => console.log(err));
